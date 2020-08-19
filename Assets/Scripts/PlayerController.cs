@@ -24,19 +24,11 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         onGround = true;
-
-        //Debug.Log(collision.collider.name == "Platform");
-        //if (Input.GetKeyDown("space") && collision.collider.name == "Platform")
-        //{
-        //    Vector2 jumpPower = new Vector2(0, jumpAmount);
-        //    rb.AddForce(jumpPower);
-        //}
     }
 
      void OnCollisionExit(Collision collision)
     {
-        onGround = false;
-        
+        onGround = false;        
     }
 
     void Update()
