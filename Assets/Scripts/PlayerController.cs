@@ -7,28 +7,36 @@ public class PlayerController : MonoBehaviour
     public float jumpAmount;
     public GameObject platform;
 
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private bool onGround = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-        
-    //}
-
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        onGround = true;
+        //Debug.Log(collision.collider.tag);
+
+        if (collision.collider.tag == "Platform")
+        {
+            onGround = true;
+        }
+        Debug.Log(onGround);
     }
 
-     void OnCollisionExit(Collision collision)
+     void OnCollisionExit2D(Collision2D collision)
     {
-        onGround = false;        
+        //Debug.Log(collision.collider.name);
+
+        if (collision.collider.tag == "Platform")
+        {
+            onGround = false;
+        }
+        Debug.Log(onGround);
+
     }
 
     void Update()

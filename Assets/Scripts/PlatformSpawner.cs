@@ -20,7 +20,7 @@ public class PlatformSpawner : MonoBehaviour
 
             float rand = Random.Range(0.5f, 1);
             Debug.Log("rand" + rand);
-            //obstacle.transform.localScale = Vector3(2, 1, 1);
+            //obstacle.transform.localScale = new Vector3(rand, 1, 1);
             Instantiate(obstacle, transform.position, Quaternion.identity);
             timeBtwSpawn = startTimeBtwSpawn;
 
