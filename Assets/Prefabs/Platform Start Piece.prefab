@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8868815586179291428}
   - component: {fileID: 8868815586179291429}
   - component: {fileID: 3778230991354030702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform Start Piece
   m_TagString: Platform
   m_Icon: {fileID: 0}
