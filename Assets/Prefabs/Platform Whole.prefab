@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLength: 1
-  minLength: 2
+  minLength: 5
   spawnDistance: 13
   destroyDistance: -30
   startPiece: {fileID: 8868815586179291430, guid: e2f750d153be14427b1c10701fd2dd40, type: 3}
