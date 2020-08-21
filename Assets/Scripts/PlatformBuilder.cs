@@ -6,8 +6,11 @@ public class PlatformBuilder : MonoBehaviour
 {
     // When setting these, remember that the platforms will always have a length
     // of at least 1
-    public int maxLength;
-    public int minLength;
+    public int maxLength = 0;
+    public int minLength = 0;
+
+    // Set how far off the platform should spawn
+    public int spawnDistance = 0;
 
     // The pieces of the platform 
     public GameObject startPiece;
@@ -18,8 +21,7 @@ public class PlatformBuilder : MonoBehaviour
     {
         // Generate the size of the platform 
         int platformSize = Random.Range(minLength, maxLength);
-
-        // get the widths of the platform pieces do can place them side by side
+        // Get the widths of the platform pieces do can place them side by side
         float startSize = startPiece.GetComponent<SpriteRenderer>().bounds.size.x;
         float middleSize = middlePiece.GetComponent<SpriteRenderer>().bounds.size.x;
 
@@ -27,22 +29,21 @@ public class PlatformBuilder : MonoBehaviour
         int i = 0;
         float currentPlatformWidth = 0;
 
-        // Place the first piece of the platform down 
-        Instantiate(startPiece, new Vector3(0, 0, 1), Quaternion.identity, gameObject.transform);
-        currentPlatformWidth += startSize;
 
+        // Place the first piece of the platform down 
+        Instantiate(startPiece, new Vector3(spawnDistance, 0, 1), Quaternion.identity, gameObject.transform);
+        currentPlatformWidth += startSize;
         // Make the platform have a length of at least 1
         do
         {
-            Instantiate(middlePiece, new Vector3 (currentPlatformWidth, 0 , 1),
+            Instantiate(middlePiece, new Vector3 (spawnDistance + currentPlatformWidth, 0 , 1),
                 Quaternion.identity, gameObject.transform);
             i++;
             currentPlatformWidth += middleSize;
 
         } while (i <= platformSize);
-
         // Place the last piece of the platform down 
-        Instantiate(endPiece, new Vector3(currentPlatformWidth, 0, 1),
+        Instantiate(endPiece, new Vector3(spawnDistance + currentPlatformWidth, 0, 1),
             Quaternion.identity, gameObject.transform);
     
     }
