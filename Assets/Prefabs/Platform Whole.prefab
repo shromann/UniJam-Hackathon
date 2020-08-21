@@ -60,6 +60,7 @@ MonoBehaviour:
   maxLength: 1
   minLength: 2
   spawnDistance: 13
+  destroyDistance: -30
   startPiece: {fileID: 8868815586179291430, guid: e2f750d153be14427b1c10701fd2dd40, type: 3}
   middlePiece: {fileID: 6333077392884834149, guid: dcdd647051e18485082fc796bc7f2339, type: 3}
   endPiece: {fileID: 4941739185368901646, guid: 88e20267482ba4e2998632fc94d98314, type: 3}

@@ -11,11 +11,14 @@ public class PlatformBuilder : MonoBehaviour
 
     // Set how far off the platform should spawn
     public int spawnDistance = 0;
+    // Set how far off the platform should destroy
+    public float destroyDistance = 0;
 
     // The pieces of the platform 
     public GameObject startPiece;
     public GameObject middlePiece;
     public GameObject endPiece;
+
 
     private void Awake()
     {
@@ -23,9 +26,9 @@ public class PlatformBuilder : MonoBehaviour
         int platformSize = Random.Range(minLength, maxLength);
         // Get the widths of the platform pieces do can place them side by side
         float startSize = startPiece.GetComponent<SpriteRenderer>().bounds.size.x - 1;
-        Debug.Log("size of start piece: " + startSize);
+        //Debug.Log("size of start piece: " + startSize);
         float middleSize = middlePiece.GetComponent<SpriteRenderer>().bounds.size.x;
-        Debug.Log("Size of middle piece: " + middleSize);
+        //Debug.Log("Size of middle piece: " + middleSize);
 
         // Counter for looping over making middle pieces 
         int i = 0;
@@ -59,6 +62,9 @@ public class PlatformBuilder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject.transform.position.x <= destroyDistance)
+        {
+            Destroy(gameObject);
+        }
     }
 }
