@@ -14,34 +14,35 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        //Debug.Log(playerGroundHeight);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Debug.Log(collision.collider.tag);
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log(collision.collider.tag);
 
-        if (collision.collider.tag == "Platform")
-        {
-            onGround = true;
-        }
-        Debug.Log(onGround);
-    }
+    //    if (collision.gameObject.tag == "Platform")
+    //    {
+    //        onGround = true;
+    //    }
+    //    Debug.Log(onGround);
+    //}
 
-     void OnCollisionExit2D(Collision2D collision)
-    {
-        //Debug.Log(collision.collider.name);
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    //Debug.Log(collision.collider.name);
 
-        if (collision.collider.tag == "Platform")
-        {
-            onGround = false;
-        }
-        Debug.Log(onGround);
+    //    if (collision.gameObject.tag == "Platform")
+    //    {
+    //        onGround = false;
+    //    }
+    //    Debug.Log(onGround);
 
-    }
+    //}
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && onGround)
+        if (Input.GetKeyDown("space") && (onGround))
         {
             Vector2 jumpPower = new Vector2(0, jumpAmount);
             rb.AddForce(jumpPower);
