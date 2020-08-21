@@ -333,6 +333,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmount: 65
   platform: {fileID: 0}
+  platformsLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1476940308
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +402,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1476940311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmount: 65
   platform: {fileID: 6333077392884834149, guid: dcdd647051e18485082fc796bc7f2339, type: 3}
+  platformsLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &1476940312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -539,11 +545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 823105574575384070, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 823105574575384071, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 823105574575384071, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}
       propertyPath: m_LocalPosition.y
@@ -611,7 +617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454311913752769482, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}
       propertyPath: minLength
-      value: 6
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454311913752769482, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}
+      propertyPath: spawnDistance
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5274954282372474969, guid: e82cc72843c0b427f9aecfbf7b5c9307, type: 3}

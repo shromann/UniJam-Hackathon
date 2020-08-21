@@ -22,8 +22,10 @@ public class PlatformBuilder : MonoBehaviour
         // Generate the size of the platform 
         int platformSize = Random.Range(minLength, maxLength);
         // Get the widths of the platform pieces do can place them side by side
-        float startSize = startPiece.GetComponent<SpriteRenderer>().bounds.size.x;
+        float startSize = startPiece.GetComponent<SpriteRenderer>().bounds.size.x - 1;
+        Debug.Log("size of start piece: " + startSize);
         float middleSize = middlePiece.GetComponent<SpriteRenderer>().bounds.size.x;
+        Debug.Log("Size of middle piece: " + middleSize);
 
         // Counter for looping over making middle pieces 
         int i = 0;
