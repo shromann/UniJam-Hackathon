@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: ff89006bc9b324d64b3bdde9cb13dd63
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4345550911210109657
+    second: bearrunningcycle_0
+  - first:
+      213: -2176014674085271991
+    second: bearrunningcycle_1
+  - first:
+      213: 3948651545496497825
+    second: bearrunningcycle_2
+  - first:
+      213: -1620884674029963787
+    second: bearrunningcycle_3
+  - first:
+      213: -8696174288516510777
+    second: bearrunningcycle_4
+  - first:
+      213: 1035393892554333332
+    second: bearrunningcycle_5
+  - first:
+      213: -1802085475949782659
+    second: bearrunningcycle_6
+  - first:
+      213: 7562808225596858318
+    second: bearrunningcycle_7
+  - first:
+      213: 4712983878466965429
+    second: bearrunningcycle_8
+  - first:
+      213: 1720578724585292177
+    second: bearrunningcycle_9
+  - first:
+      213: 1966432360167579204
+    second: bearrunningcycle_10
+  - first:
+      213: 7581737773148464148
+    second: bearrunningcycle_11
+  - first:
+      213: -694709310415189197
+    second: bearrunningcycle_12
+  - first:
+      213: -1383739413079272291
+    second: bearrunningcycle_13
+  - first:
+      213: 8265680763928571481
+    second: bearrunningcycle_14
+  - first:
+      213: -1542289945418201536
+    second: bearrunningcycle_15
+  - first:
+      213: 1284169484462311985
+    second: bearrunningcycle_16
+  - first:
+      213: -8668742728636778668
+    second: bearrunningcycle_17
+  - first:
+      213: 230101337468772332
+    second: bearrunningcycle_18
+  - first:
+      213: 7802031442530256152
+    second: bearrunningcycle_19
+  - first:
+      213: -7194520880708190960
+    second: bearrunningcycle_20
+  - first:
+      213: 3688033003471534887
+    second: bearrunningcycle_21
+  - first:
+      213: -957206960046445675
+    second: bearrunningcycle_22
+  - first:
+      213: 6268735184617894296
+    second: bearrunningcycle_23
+  - first:
+      213: -319829067287885315
+    second: bearrunningcycle_24
+  - first:
+      213: 272649318479155408
+    second: bearrunningcycle_25
+  - first:
+      213: 31585579077855720
+    second: bearrunningcycle_26
+  - first:
+      213: -3255841227871089733
+    second: bearrunningcycle_27
+  - first:
+      213: 3422241562948540554
+    second: bearrunningcycle_28
+  - first:
+      213: 1931594312455591022
+    second: bearrunningcycle_29
+  - first:
+      213: 2125572629156488930
+    second: bearrunningcycle_30
+  - first:
+      213: 2484711074232707801
+    second: bearrunningcycle_31
+  - first:
+      213: 8670052323349637852
+    second: bearrunningcycle_32
+  - first:
+      213: -8503508972862801955
+    second: bearrunningcycle_33
+  - first:
+      213: 416454553096373205
+    second: bearrunningcycle_34
+  - first:
+      213: 1134403188271570881
+    second: bearrunningcycle_35
+  - first:
+      213: 4441444936598706839
+    second: bearrunningcycle_36
+  - first:
+      213: 6936891039883390863
+    second: bearrunningcycle_37
+  - first:
+      213: -2988820458690040599
+    second: bearrunningcycle_38
+  - first:
+      213: 3015425741141713725
+    second: bearrunningcycle_39
+  - first:
+      213: 5351283559717686645
+    second: bearrunningcycle_40
+  - first:
+      213: -7815803244610848461
+    second: bearrunningcycle_41
+  - first:
+      213: -4981917471860122002
+    second: bearrunningcycle_42
+  - first:
+      213: 7245509042327821791
+    second: bearrunningcycle_43
+  - first:
+      213: -8637335199800079395
+    second: bearrunningcycle_44
+  - first:
+      213: -885372977392930829
+    second: bearrunningcycle_45
+  - first:
+      213: -2160780920074168862
+    second: bearrunningcycle_46
+  - first:
+      213: -6051672792519799908
+    second: bearrunningcycle_47
+  - first:
+      213: -3227416345467327990
+    second: bearrunningcycle_48
+  - first:
+      213: -203841029154806957
+    second: bearrunningcycle_49
+  - first:
+      213: 3564812824127419133
+    second: bearrunningcycle_50
+  - first:
+      213: 8156457661622780796
+    second: bearrunningcycle_51
+  - first:
+      213: -316970227708096253
+    second: bearrunningcycle_52
+  - first:
+      213: 8697732536418641446
+    second: bearrunningcycle_53
+  - first:
+      213: 1030678493902721295
+    second: bearrunningcycle_54
+  - first:
+      213: -7538286041217686038
+    second: bearrunningcycle_55
+  - first:
+      213: -2414630152359780550
+    second: bearrunningcycle_56
+  - first:
+      213: -1669311585768627385
+    second: bearrunningcycle_57
+  - first:
+      213: -7958746207383868621
+    second: bearrunningcycle_58
+  - first:
+      213: 4213160113217135231
+    second: bearrunningcycle_59
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bearrunningcycle_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 868
+        width: 366
+        height: 536
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72542ff487081b3c0800000000000000
+      internalID: -4345550911210109657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bearrunningcycle_1
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 866
+        width: 387
+        height: 538
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9462c15de2e3dc1e0800000000000000
+      internalID: -2176014674085271991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bearrunningcycle_2
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 868
+        width: 365
+        height: 536
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aead17e8ad6cc630800000000000000
+      internalID: 3948651545496497825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bearrunningcycle_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 324
+        width: 387
+        height: 538
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5b19e0af57189e0800000000000000
+      internalID: -1620884674029963787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bearrunningcycle_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 307
+        width: 410
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb86141f8bf05780800000000000000
+      internalID: -8696174288516510777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

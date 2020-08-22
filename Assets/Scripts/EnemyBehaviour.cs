@@ -47,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
             // Destroy the Virus.
             Destroy(this.gameObject);            
         }
+
         if (other.gameObject.CompareTag("Bullet"))
         {
             // Take damage from the bullet.
