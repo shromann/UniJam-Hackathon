@@ -70,22 +70,8 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        if (health <= 0)
-        {
-            Die();
-        }
-        else
-        {
             health -= damageAmount;
             Debug.Log("HEALTH " + health);
-        }
-
 
     }
-
-    private void Die()
-    {
-        Destroy(this.gameObject);
-    }
-
 }
