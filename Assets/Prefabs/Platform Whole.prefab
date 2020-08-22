@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348c37e811aaa473b8377da14db337ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
 --- !u!114 &8454311913752769482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,10 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409356310198148fd9b2735a8b959c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLength: 1
-  minLength: 5
-  spawnDistance: 13
-  destroyDistance: -30
-  startPiece: {fileID: 8868815586179291430, guid: e2f750d153be14427b1c10701fd2dd40, type: 3}
-  middlePiece: {fileID: 6333077392884834149, guid: dcdd647051e18485082fc796bc7f2339, type: 3}
-  endPiece: {fileID: 4941739185368901646, guid: 88e20267482ba4e2998632fc94d98314, type: 3}
+  maxLength: 4
+  destroyDistance: -40
+  startPiece: {fileID: 7022165250121560234, guid: 8258e98d5d65f4b2e80307f6489cff21, type: 3}
+  middlePiece: {fileID: 278877272085009376, guid: 63c98304dc2ca4560835e54669fd03dd, type: 3}
+  endPiece: {fileID: 7022165250121560234, guid: 8258e98d5d65f4b2e80307f6489cff21, type: 3}

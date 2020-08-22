@@ -9,6 +9,8 @@ public class Platform : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        
     }
 
     

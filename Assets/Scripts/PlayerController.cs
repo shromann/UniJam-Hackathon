@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // By how much should the player jump
     public float jumpAmount;
-    public GameObject platform;
+
+    // Player health
+    public int health = 3;
+
+    // Platform
+    //public GameObject platform;
     public LayerMask platformsLayer;
 
     private Rigidbody2D rb;
@@ -29,8 +35,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D onGround = Physics2D.BoxCast(bcol.bounds.center,
             bcol.bounds.size, 0f, Vector2.down, bcol.bounds.extents.y + 0.1f, platformsLayer);
 
-        Debug.Log(onGround.collider);
-
+       
         return (onGround.collider != null);
     }
 
@@ -41,6 +46,26 @@ public class PlayerController : MonoBehaviour
             Vector2 jumpPower = new Vector2(0, jumpAmount);
             rb.AddForce(jumpPower);
         }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        if (health <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            health -= damageAmount;
+            Debug.Log("HEALTH " + health);
+        }
+
+
+    }
+
+    private void Die()
+    {
+        Destroy(this.gameObject);
     }
 
 }

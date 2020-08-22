@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         if (timer >= spawnTime)
         {
             float enemyHeight = Random.Range(minHeight, maxHeight);
-            Instantiate(enemyType, new Vector3(11, enemyHeight, 1), Quaternion.identity);
+            Instantiate(enemyType, new Vector3(transform.position.x, enemyHeight, transform.position.z), Quaternion.identity);
 
             spawnTime = Random.Range(minTime, maxTime);
             timer = 0;
