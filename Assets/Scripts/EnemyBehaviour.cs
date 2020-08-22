@@ -24,6 +24,8 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject playerAmmo;
     public GameObject splashEffect;
 
+    public GameObject cameraObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
         //rb = gameObject.GetComponent<Rigidbody2D>();
         //Debug.Log(playerGroundHeight);
         bcol = gameObject.GetComponent<BoxCollider2D>();
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera"); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +42,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().TakeDamage(damageAmount);
+            cameraObject.GetComponent<CameraShaker>().TriggerShake();
+
             Destroy(this.gameObject);            
         }
         if (other.gameObject.CompareTag("Bullet"))
@@ -79,11 +84,11 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (groundCheck())
         {
-            movement = new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0, 0.5f));
+            movement = new Vector2(Random.Range(-0.5f, 0.3f), Random.Range(0, 0.5f));
 
         } else
         {
-            movement = new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
+            movement = new Vector2(Random.Range(-0.5f, 0.3f), Random.Range(-0.5f, 0.2f));
         }
     }
 
