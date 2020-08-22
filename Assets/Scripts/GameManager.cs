@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
 
     public int lives = 5;
     private int score = 1;
+    private float latestUpdate = 0;
 
     //public Text livesText;
-    public Text scoreText; 
+    public Text scoreText;
 
     public void LoseLife (int i = 1)
     {
@@ -32,8 +33,16 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        double scoreF = 0.0005 * Time.deltaTime;
-        score += 1 + (int) scoreF;
+        if (Time.time - latestUpdate >= 0.25f)
+        {
+            //double scoreF = 0.0005 * Time.time;
+            //Debug.Log(scoreF);
+            score += 1;
+
+            latestUpdate = Time.time;
+        }
+
+        
 
         scoreText.text = score.ToString();            
 
