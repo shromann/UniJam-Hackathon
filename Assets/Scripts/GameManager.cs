@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        double scoreF = 0.0005 * Time.time;
+        double scoreF = 0.0005 * Time.deltaTime;
         score += 1 + (int) scoreF;
 
         scoreText.text = score.ToString();            
