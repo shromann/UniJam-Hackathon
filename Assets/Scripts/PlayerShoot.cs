@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) && Time.time > nextFire )
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire )
         {
             //Debug.Log("Time " + Time.time);
             nextFire = Time.time + fireRate;

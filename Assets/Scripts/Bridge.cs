@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour
+public class Bridge : MonoBehaviour
 {
     private float speed = 5f;
 
     private float destroyDistance = -20f;
 
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
         if (transform.position.x <= destroyDistance)
@@ -19,6 +19,4 @@ public class Platform : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    
 }

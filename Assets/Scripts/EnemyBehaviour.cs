@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -21,18 +19,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     private BoxCollider2D bcol;
 
-    public GameObject playerAmmo;
+    //public GameObject playerAmmo;
     public GameObject splashEffect;
 
     public GameObject cameraObject;
 
 
+    private float destroyDistance = -20f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        //rb = gameObject.GetComponent<Rigidbody2D>();
-        //Debug.Log(playerGroundHeight);
+        rb = GetComponent<Rigidbody2D>(); 
         bcol = gameObject.GetComponent<BoxCollider2D>();
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera"); 
     }
@@ -41,16 +40,21 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            // Damage the Player
             other.gameObject.GetComponent<PlayerController>().TakeDamage(damageAmount);
+            // Shake screen when player gets hit.
             cameraObject.GetComponent<CameraShaker>().TriggerShake();
-
+            // Destroy the Virus.
             Destroy(this.gameObject);            
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
+            // Take damage from the bullet.
             AmmoBehaviour bullet = other.gameObject.GetComponent<AmmoBehaviour>();
             TakeDamage(bullet.damageAmount);
+            // Make the splash effect.
             Instantiate(splashEffect, transform.position, Quaternion.identity);
+            // Destroy the bullet.
             Destroy(other.gameObject); 
         }
 
@@ -89,6 +93,11 @@ public class EnemyBehaviour : MonoBehaviour
         } else
         {
             movement = new Vector2(Random.Range(-0.5f, 0.3f), Random.Range(-0.5f, 0.2f));
+        }
+
+        if (transform.position.x <= destroyDistance)
+        {
+            Destroy(gameObject);
         }
     }
 

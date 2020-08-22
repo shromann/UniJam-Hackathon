@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     //public GameObject platform;
     public LayerMask platformsLayer;
 
-    private Rigidbody2D rb;
-    //private bool onGround = false;
+    private Rigidbody2D rb; 
     private BoxCollider2D bcol;
+
+    // Bridge Object
+    public GameObject bridge;
 
     
 
@@ -41,10 +43,28 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && groundCheck())
+        if (Input.GetKeyDown(KeyCode.UpArrow) && groundCheck())
         {
-            Vector2 jumpPower = new Vector2(0, jumpAmount);
-            rb.AddForce(jumpPower);
+            Vector2 moveForce = new Vector2(0, jumpAmount);
+            rb.AddForce(moveForce);
+
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) && groundCheck())
+        {
+            Vector2 moveForce = new Vector2(-10f, 0);
+            rb.AddForce(moveForce);
+            transform.Translate(Vector2.left * 2f * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) && groundCheck())
+        {
+            Vector2 moveForce = new Vector2(10f, 0);
+            rb.AddForce(moveForce);
+            transform.Translate(Vector2.right * 2f * Time.deltaTime);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("CREATE BRIDGE");
+            Instantiate(bridge, new Vector3(5f,8f, 1f), Quaternion.identity);
         }
     }
 
