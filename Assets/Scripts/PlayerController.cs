@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow) && groundCheck() && transform.position.x > 1.2f - screenBounds.x)
         {
-            Debug.Log("transform.position.x " + screenBounds.x);
             Vector2 moveForce = new Vector2(-10f, 0);
             rb.AddForce(moveForce);
             transform.Translate(Vector2.left * 2f * Time.deltaTime);
@@ -69,23 +68,23 @@ public class PlayerController : MonoBehaviour
 
 
         // CREATE BRIDGES IN THREE POSITIONS
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Debug.Log("CREATE BRIDGE");
-            Instantiate(bridge, new Vector3(7.5f ,8f, transform.position.z), Quaternion.identity);
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    Debug.Log("CREATE BRIDGE");
+        //    Instantiate(bridge, new Vector3(8.5f ,8f, transform.position.z), Quaternion.identity);
+        //}
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("CREATE BRIDGE");
-            Instantiate(bridge, new Vector3(5f, 8f, transform.position.z), Quaternion.identity);
+            Instantiate(bridge, new Vector3(6f, 8f, transform.position.z), Quaternion.identity);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("CREATE BRIDGE");
-            Instantiate(bridge, new Vector3(2.5f, 8f, transform.position.z), Quaternion.identity);
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Debug.Log("CREATE BRIDGE");
+        //    Instantiate(bridge, new Vector3(3.5f, 8f, transform.position.z), Quaternion.identity);
+        //}
 
     }
 

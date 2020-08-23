@@ -7,13 +7,13 @@ public class EnemySpawner : MonoBehaviour
     public float maxHeight = 2;
     public float minHeight = 1;
 
-    public int maxTime = 2;
-    public int minTime = 1;
+    public float maxTime = 2;
+    public float minTime = 1;
 
     public GameObject enemyType;
 
     private float timer = 0;
-    private int spawnTime;
+    private float spawnTime;
 
     // https://answers.unity.com/questions/898380/spawning-an-object-at-a-random-time-c.html
     // Start is called before the first frame update

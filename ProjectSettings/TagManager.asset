@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - Enemy
   - Bullet
+  - Bridge
+  - Sound_Disinfect
+  - _SCRIPTS_
   layers:
   - Default
   - TransparentFX

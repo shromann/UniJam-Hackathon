@@ -9,6 +9,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     public LayerMask platformsLayer;
 
+    // Sound Effect
+    public AudioSource disinfectSound;
+    public AudioSource playerInjure;
+
     // Random Motion
     private Rigidbody2D rb;
     private float accelerationTime = 1f;
@@ -21,18 +25,26 @@ public class EnemyBehaviour : MonoBehaviour
 
     //public GameObject playerAmmo;
     public GameObject splashEffect;
-    public GameObject cameraObject;
+    private GameObject cameraObject;
 
+    // Import Score Manager Script
+    private GameObject gm;
 
+    // Distance to destroy the virus
     private float destroyDistance = -20f;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
         bcol = gameObject.GetComponent<BoxCollider2D>();
-        cameraObject = GameObject.FindGameObjectWithTag("MainCamera"); 
+        disinfectSound = Instantiate(disinfectSound);
+        playerInjure = Instantiate(playerInjure);
+        
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        gm = GameObject.FindGameObjectWithTag("_SCRIPTS_");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +52,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // Damage the Player
+            playerInjure.Play();
             other.gameObject.GetComponent<PlayerController>().TakeDamage(damageAmount);
             // Shake screen when player gets hit.
             cameraObject.GetComponent<CameraShaker>().TriggerShake();
@@ -49,13 +62,14 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (other.gameObject.CompareTag("Bullet"))
         {
-            // Take damage from the bullet.
-            AmmoBehaviour bullet = other.gameObject.GetComponent<AmmoBehaviour>();
-            TakeDamage(bullet.damageAmount);
+            
             // Make the splash effect.
             Instantiate(splashEffect, transform.position, Quaternion.identity);
             // Destroy the bullet.
-            Destroy(other.gameObject); 
+            Destroy(other.gameObject);
+            // Take damage from the bullet.
+            AmmoBehaviour bullet = other.gameObject.GetComponent<AmmoBehaviour>();
+            TakeDamage(bullet.damageAmount);
         }
 
     }
@@ -75,6 +89,12 @@ public class EnemyBehaviour : MonoBehaviour
         hp -= damageAmount;
         if (hp <= 0)
         {
+            cameraObject.GetComponent<CameraShaker>().TriggerShake();
+            gm.GetComponent<ScoreManager>().EnemyKillScore();
+
+
+
+            disinfectSound.Play();
             Destroy(gameObject);
         }
     }
