@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Game Over");
 
         Destroy(player);
+        AudioInGame.Pause();
 
         // Makes everything stop 
         Time.timeScale = 0;
