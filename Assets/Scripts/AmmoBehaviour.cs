@@ -12,7 +12,9 @@ public class AmmoBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 screenBounds;
 
-  
+
+
+    public AudioSource splashSound;
 
     public GameObject explosion;
     public GameObject splashEffect;
@@ -25,6 +27,7 @@ public class AmmoBehaviour : MonoBehaviour
         rb.AddForce(bulletForce);
         rb.AddTorque(-1f);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        splashSound = Instantiate(splashSound);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -35,6 +38,7 @@ public class AmmoBehaviour : MonoBehaviour
         { 
             Instantiate(splashEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            splashSound.Play();
 
         }
 
@@ -45,6 +49,7 @@ public class AmmoBehaviour : MonoBehaviour
     {
         if (transform.position.x > screenBounds.x)  
         {
+            Destroy(splashSound);
             Destroy(this.gameObject);
         }
          

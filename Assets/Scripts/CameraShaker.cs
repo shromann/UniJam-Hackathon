@@ -51,7 +51,7 @@ public class CameraShaker : MonoBehaviour
         initialPosition = transform.localPosition;
     }
 
-    public void TriggerShake()
+    public void TriggerShake(float shakeAmount=0.5f)
     {
         shakeDuration = 0.5f;
     }

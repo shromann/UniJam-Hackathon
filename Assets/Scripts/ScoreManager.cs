@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
     //public int lives = 5;
     private int score = 1;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         
         if (Time.time - latestUpdate >= 0.25f)
         {
-            score += (int) Time.time;
+            score += (int) ( 0.8 * Time.time );
 
             latestUpdate = Time.time;
         }
@@ -96,6 +96,12 @@ public class GameManager : MonoBehaviour
 
 
     // Public Methods to be accessed by buttons
+
+    public void EnemyKillScore()
+    {
+        score += 500 + (int) (Time.time * 0.5);
+        Debug.Log("ENEMY KILLED");
+    }
 
     public void RestartGame()
     {

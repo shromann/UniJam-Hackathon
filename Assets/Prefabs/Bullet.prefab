@@ -194,6 +194,7 @@ MonoBehaviour:
   damageAmount: 1
   destroyDistance: 0
   speed: 5
+  splashSound: {fileID: 7335466996801146433, guid: cc3cd58274f3443feb23dea57f9fc7c1, type: 3}
   explosion: {fileID: 0}
   splashEffect: {fileID: 526587385653552632, guid: 715c2cb9634ed44b9aa4f8572532283f, type: 3}
 --- !u!61 &7146227768205160670
