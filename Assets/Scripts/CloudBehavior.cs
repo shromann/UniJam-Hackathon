@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour
+public class CloudBehavior : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed;
 
     private float destroyDistance = -20f;
 
-
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
         if (transform.position.x <= destroyDistance)
         {
             Destroy(gameObject);
         }
-    }
 
-    
+    }
 }

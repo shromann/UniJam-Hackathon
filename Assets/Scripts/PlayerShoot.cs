@@ -14,7 +14,6 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire )
         {
-            //Debug.Log("Time " + Time.time);
             nextFire = Time.time + fireRate;
             Instantiate(bullet, new Vector2 (transform.position.x + spawnDistance, transform.position.y),
                 Quaternion.identity);

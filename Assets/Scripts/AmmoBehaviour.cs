@@ -12,7 +12,7 @@ public class AmmoBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 screenBounds;
 
-    private BoxCollider2D bcol;
+  
 
     public GameObject explosion;
     public GameObject splashEffect;
@@ -23,8 +23,8 @@ public class AmmoBehaviour : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>(); 
         Vector2 bulletForce = new Vector2(300f, 250f);
         rb.AddForce(bulletForce);
+        rb.AddTorque(-1f);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -43,12 +43,12 @@ public class AmmoBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (transform.position.x > screenBounds.x)
+        if (transform.position.x > screenBounds.x)  
         {
             Destroy(this.gameObject);
         }
          
     }
+
 
 }

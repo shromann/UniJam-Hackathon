@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpAmount;
 
     // Player health
-    public int health = 3;
+    public int health = 5;
 
     // Platform
     //public GameObject platform;
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     // Bridge Object
     public GameObject bridge;
 
+    // Screen Vector
+    private Vector2 screenBounds;
     
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         //Debug.Log(playerGroundHeight);
         bcol = gameObject.GetComponent<BoxCollider2D>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     // https://unitycodemonkey.com/video.php?v=c3iEl5AwUF8
@@ -43,29 +46,47 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && groundCheck())
         {
             Vector2 moveForce = new Vector2(0, jumpAmount);
             rb.AddForce(moveForce);
 
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && groundCheck())
+        if (Input.GetKey(KeyCode.LeftArrow) && groundCheck() && transform.position.x > 1.2f - screenBounds.x)
         {
+            Debug.Log("transform.position.x " + screenBounds.x);
             Vector2 moveForce = new Vector2(-10f, 0);
             rb.AddForce(moveForce);
             transform.Translate(Vector2.left * 2f * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.RightArrow) && groundCheck())
+        if (Input.GetKey(KeyCode.RightArrow) && groundCheck() && transform.position.x < screenBounds.x - 1.2f)
         {
             Vector2 moveForce = new Vector2(10f, 0);
             rb.AddForce(moveForce);
             transform.Translate(Vector2.right * 2f * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+
+        // CREATE BRIDGES IN THREE POSITIONS
+        if (Input.GetKeyDown(KeyCode.D))
         {
             Debug.Log("CREATE BRIDGE");
-            Instantiate(bridge, new Vector3(5f,8f, 1f), Quaternion.identity);
+            Instantiate(bridge, new Vector3(7.5f ,8f, transform.position.z), Quaternion.identity);
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("CREATE BRIDGE");
+            Instantiate(bridge, new Vector3(5f, 8f, transform.position.z), Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("CREATE BRIDGE");
+            Instantiate(bridge, new Vector3(2.5f, 8f, transform.position.z), Quaternion.identity);
+        }
+
     }
 
     public void TakeDamage(int damageAmount)

@@ -21,7 +21,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     //public GameObject playerAmmo;
     public GameObject splashEffect;
-
     public GameObject cameraObject;
 
 
