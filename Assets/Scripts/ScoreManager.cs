@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject pauseScreen;
 
     public AudioSource AudioInGame;
+    public AudioSource PauseMenuSound;
+    public AudioSource GameOverSound;
 
 
     private void Start()
@@ -38,6 +40,7 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log("Game Over");
 
+        GameOverSound.Play();
         Destroy(player);
         AudioInGame.Pause();
 
@@ -114,6 +117,7 @@ public class ScoreManager : MonoBehaviour
     {
         Time.timeScale = 0;
         AudioInGame.Pause();
+        PauseMenuSound.Play();
         pauseScreen.SetActive(true);
     }
 
