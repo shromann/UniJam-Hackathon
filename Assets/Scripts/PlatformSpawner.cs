@@ -95,6 +95,7 @@ public class PlatformSpawner : MonoBehaviour
     // ====== ====== ====== ====== ====== ====== ====== ====== ====== ======
     private void Update()
     {
+        Debug.Log("previousObject.transform.position.x:" + previousObject.transform.position.x);
 
         if (previousObject.transform.position.x <= 26.00f)
         {

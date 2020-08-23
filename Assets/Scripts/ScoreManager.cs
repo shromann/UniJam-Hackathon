@@ -130,7 +130,8 @@ public class ScoreManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 
 

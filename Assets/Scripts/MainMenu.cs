@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,7 +18,19 @@ public class MainMenu : MonoBehaviour
 
 	public void Controls()
     {
-		controlsScreen.SetActive(true);
+		if (controlsScreen.active)
+        {
+			controlsScreen.SetActive(false);
+		}
+		else
+        {
+			if (creditsScreen.active)
+			{
+				creditsScreen.SetActive(false);
+			}
+			controlsScreen.SetActive(true);
+		}
+		
     }
 
 	public void ControlsExit()
@@ -28,7 +40,19 @@ public class MainMenu : MonoBehaviour
 
 	public void Credits()
     {
-		creditsScreen.SetActive(true);
+
+		if (creditsScreen.active)
+        {
+			creditsScreen.SetActive(false);
+		}
+		else
+        {
+			if (controlsScreen.active)
+			{
+				controlsScreen.SetActive(false);
+			}
+			creditsScreen.SetActive(true);
+		}
     }
 
 	public void CreditsExit()
