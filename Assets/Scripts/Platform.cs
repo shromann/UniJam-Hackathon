@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 1f;
 
     private float destroyDistance = -20f;
 

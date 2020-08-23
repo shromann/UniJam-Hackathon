@@ -18,6 +18,7 @@ public class PlatformSpawner : MonoBehaviour
     public GameObject startPiece;
     public GameObject middlePiece;
     public GameObject endPiece;
+    public GameObject platform;
 
     // Indicator of which platform to spawn
     private int platformToSpawn = 1;
@@ -28,7 +29,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private void Start()
     {
-        previousObject = Instantiate(startPiece, new Vector3(10f,-15f,10), Quaternion.identity);
+        previousObject = Instantiate(platform, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
 
@@ -93,52 +94,74 @@ public class PlatformSpawner : MonoBehaviour
     // ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== 
     // NEW UPDATE METHOD WITH DISTANCE CALCULATION
     // ====== ====== ====== ====== ====== ====== ====== ====== ====== ======
+    //private void Update()
+    //{
+    //    Debug.Log("previousObject.transform.position.x:" + previousObject.transform.position.x);
+
+    //    if (previousObject.transform.position.x <= 26.00f)
+    //    {
+
+    //        if (platformToSpawn == 1)
+    //        {
+    //            previousObject = Instantiate(startPiece, transform.position, Quaternion.identity);
+    //            platformToSpawn = 2;
+    //        }
+    //        else if (platformToSpawn == 2)
+    //        {
+    //            previousObject = Instantiate(middlePiece, transform.position, Quaternion.identity);
+    //            numberOfMiddleSpaces -= 1;
+
+    //            if (numberOfMiddleSpaces <= 0)
+    //            {
+    //                numberOfMiddleSpaces = Random.Range(1, 4);
+    //                platformToSpawn = 3;
+    //            }
+    //        }
+    //        else if (platformToSpawn == 3)
+    //        {
+    //            previousObject = Instantiate(endPiece, transform.position, Quaternion.identity);
+    //            platformToSpawn = 0;
+    //        }
+    //        else
+    //        {
+    //            if (numberOfEmptySpaces <= 0)
+    //            {                    
+    //                platformToSpawn = 1;
+    //                numberOfEmptySpaces = Random.Range(1, MaxEmptySpaces);
+    //            }
+    //            else
+    //            {
+    //                numberOfEmptySpaces -= 1;
+    //                previousObject = Instantiate(middlePiece,new Vector3(transform.position.x, 20f, 20f), Quaternion.identity);
+    //            }
+    //        }
+
+
+    //    }
+
+
+
+    //}
+
     private void Update()
     {
-        Debug.Log("previousObject.transform.position.x:" + previousObject.transform.position.x);
+        //RectTransform rt = (RectTransform)previousObject.transform;
+        //float width = rt.rect.width;
+        //float height = rt.rect.height;
+        //Debug.Log("previousObject.transform.position.x:" + previousObject.transform.position.x);
+        //Debug.Log("width:" + width);
+        Debug.Log("previousObject. edge.position.x:" + previousObject.GetComponent<PlatformBuilder>().GetWidth());
 
-        if (previousObject.transform.position.x <= 26.00f)
+        float prevEdge = previousObject.GetComponent<PlatformBuilder>().GetEdgePosition();
+        float width = previousObject.GetComponent<PlatformBuilder>().GetWidth();
+
+        if (prevEdge <= 24.8f )
         {
-
-            if (platformToSpawn == 1)
-            {
-                previousObject = Instantiate(startPiece, transform.position, Quaternion.identity);
-                platformToSpawn = 2;
-            }
-            else if (platformToSpawn == 2)
-            {
-                previousObject = Instantiate(middlePiece, transform.position, Quaternion.identity);
-                numberOfMiddleSpaces -= 1;
-
-                if (numberOfMiddleSpaces <= 0)
-                {
-                    numberOfMiddleSpaces = Random.Range(1, 4);
-                    platformToSpawn = 3;
-                }
-            }
-            else if (platformToSpawn == 3)
-            {
-                previousObject = Instantiate(endPiece, transform.position, Quaternion.identity);
-                platformToSpawn = 0;
-            }
-            else
-            {
-                if (numberOfEmptySpaces <= 0)
-                {                    
-                    platformToSpawn = 1;
-                    numberOfEmptySpaces = Random.Range(1, MaxEmptySpaces);
-                }
-                else
-                {
-                    numberOfEmptySpaces -= 1;
-                    previousObject = Instantiate(middlePiece,new Vector3(transform.position.x, 20f, 20f), Quaternion.identity);
-                }
-            }
-            
+            previousObject = Instantiate(platform, transform.position, Quaternion.identity);
 
         }
 
-        
+
 
     }
 
